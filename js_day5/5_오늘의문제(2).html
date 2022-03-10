@@ -31,22 +31,34 @@
         
         </tbody>
     </table>
-    <button onclick="add_schedule()">일정추가하기</button>
+    <button onclick="add_schedule()">일정추가하기</button>  
     <script>
-        const time=['09:00','11:00','12:30','14:00','16:45']
-        const todo=['수업','과제','점심식사','주간회의','자료조사']
+        // const time=['09:00','11:00','12:30','14:00','16:45']
+        // const todo=['수업','과제','점심식사','주간회의','자료조사']
 
         const schedule = [{time:'09:00',todo:'수업'},
                           {time:'11:00',todo:'과제'},
                           {time:'12:30',todo:'점심식사'},
                           {time:'14:00',todo:'주간회의'},
                           {time:'16:45',todo:'자료조사'}]
-        //??
+
+        // let _schedule='';   //전역변수
+        // schedule.forEach(function(value){   //value 의 타입이 object -> 프로퍼티 time,todo
+        //     // ${value.time}, ${value.todo}
+        //     _schedule+= `<tr><td>${value.time}</td><td>${value.todo}</td></tr>`
+        // })
+
+        // document.getElementById('contents').innerHTML = _schedule;
+        set_tbody();
+        //함수사용2) 반복해서 사용된 코드를(명령들.) 함수로 정의해서 재사용한다.(함수 호출)
+        function set_tbody(){   // 함수이름은 식별자(프로그래머가 이해할수 있는 단어로 만듭니다.)
+         let _schedule='';   //함수의 지역변수
         schedule.forEach(function(value){   //value 의 타입이 object -> 프로퍼티 time,todo
-            ${value.time}, ${value.todo}
-
+            // ${value.time}, ${value.todo}
+            _schedule+= `<tr><td>${value.time}</td><td>${value.todo}</td></tr>`
         })
-
+        document.getElementById('contents').innerHTML = _schedule;
+        }
 
         function add_schedule(){
             //prompt 이용해서 시간과 할일을 각각 입력받기
@@ -56,7 +68,13 @@
             schedule.push({time:atime,todo:atodo})  //배열에 새로운 객체 항목을 추가
             //tbody 안에 원래 내용은 ''로 비우고 새로변경된 배열로 tr 태그를 넣어줍니다.
             //???
-
+        //     let _schedule='';   //함수의 지역변수
+        // schedule.forEach(function(value){   //value 의 타입이 object -> 프로퍼티 time,todo
+        //     // ${value.time}, ${value.todo}
+        //     _schedule+= `<tr><td>${value.time}</td><td>${value.todo}</td></tr>`
+        // })
+        // document.getElementById('contents').innerHTML = _schedule;
+        set_tbody(); //함수호출
         }
 
 
