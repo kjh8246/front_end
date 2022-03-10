@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 현재 웹문서의 favorite icon 설정 : 문서제목, 북마크에 적용됩니다.-->
+    <link rel="icon" type="image/x-icon" href="../images/fav.ico">
+</head>
+<body>
+
+<h2>The picture Element</h2>
+
+<picture>
+  <source media="(min-width: 650px)" srcset="../images/bono.jpg">
+  <source media="(min-width: 465px)" srcset="../images/kakao.jpg">
+  <img src="../images/dog.jpg" style="width:auto;">
+  
+</picture>
+
+<p>
+    반응형 웹이란 하나의 웹사이트로 데스크탑 pc 스마트폰 테블릿 pc등 접속하는 디스플레이의 종류에 따라 화면의 크기가 자동으로 변하도록 만든 웹 페이지를 말합니다. <br>
+    위의 picture 테그는 화면 크기에 따라 보이는 이미지를 다르게 합니다
+    650픽셀보다 클때는 첫번째 이미지, 465이상 650보다 작을때는 두번째 이미지, 465 미만일때는 세번째 이미지 입니다 <br>
+
+    Resize the browser to see different versions of the picture loading at different viewport sizes.
+The browser looks for the first source element where the media query matches the user's current viewport width,
+and fetches the image specified in the srcset attribute.</p>
+
+<p>The img element is required as the last child tag of the picture declaration block.
+The img element is used to provide backward compatibility for browsers that do not support the picture element, or if none of the source tags matched.
+</p>
+
+<p><strong>Note:</strong> The picture element is not supported in IE12 and earlier or Safari 9.0 and earlier.</p>
+<p>개발자 도구에서 viewport 크기를 조절하면서도 실행해 보세요.
+        단축키 f12
+</p>
+</body>
+</html>

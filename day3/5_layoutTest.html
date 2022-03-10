@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="4_layout.css">
+    <title>Document</title>
+</head>
+<body>
+    HTML 요소는 기본적으로 정적으로 배치됩니다.
+    정적 위치 요소는 top, bottom, left, right 속성의 영향을 받지 않습니다.
+    <div class="static">
+        이 div 요소는 position: static;
+    </div>
+    상대적으로 배치된 요소의 top, right, bottom, left 속성을 설정하면 원래 위치에서 멀어지게 조정됩니다. 다른 콘텐츠는 요소에 의해 남겨진 간격에 맞게 조정되지 않습니다.
+    <div class="relative">
+        이 div 요소에는 위치가 있습니다. 상대;
+    </div>
+    가 있는 요소 position: fixed;는 뷰포트에 상대적으로 위치하므로 페이지가 스크롤되더라도 항상 같은 위치에 유지됩니다. top, right, bottom, left 속성은 요소의 위치를 ​​지정하는 데 사용됩니다.
+    <div class="fixed">
+        이 div 요소는 position: fixed;
+    </div>
+    가 있는 요소 position: absolute;는 가장 가까운 위치에 있는 조상을 기준으로 배치됩니다(고정처럼 뷰포트를 기준으로 배치되는 대신).
+    <div class="absolute">This div element has position: absolute;</div>
+</div>
+<div class="sticky">I am sticky!</div>
+<div style="padding-bottom: 2000px;">
+    asdf
+</div>
+</body>
+</html>
