@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="5_hrdkorea.css">
+    <link rel="stylesheet" href="0_hrdkorea.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,12 +22,74 @@
             </ul>
         </nav>
         <section>
-                <h4 style="text-align: center;">도서대여관리 프로그램</h4>
-                <p>도서대여 회원과 도서에 대한 데이터베이스를 구축하고 대여관리 프로그램을 작성합니다.<br>프로그램작성순서</p>
-                
+                <h4 style="text-align: center;">도서대여</h4>
+            <form action="">
+                <table>
+                    <tr>
+                        <td>대여NO</td>
+                        <td><input type="text" placeholder="자동생성" name="rentno"></td>
+                    </tr>
+                    <tr>
+                        <td>회원번호 입력</td>
+                        <td><input type="text" placeholder="회원번호 입력" name="userno"></td>
+                    </tr>
+                    <tr>
+                        <td>도서코드</td>
+                        <td><input type="text" placeholder="도서코드 입력" name="code"></td>
+                    </tr>
+                    <tr>
+                        <td>대여일자</td>
+                        <td><input type="date" name="rentdate" id=""></td>
+                        <td><button type="button" onclick="rent_click()">대여</button></td>
+                    </tr>
+                    <tr>
+                        <td>반납예정일자</td>
+                        <td><input type="date" name="returndate" id=""></td>
+                    </tr>
+                </table>
+            </form>
         </section>
         <footer>
             HRDKOREA Copyright&copy;2016 All rights reserved. Human Resources Development Service of Korea.
         </footer>
+
+        <script>
+            const frm = document.forms[0]
+            const rentnof = frm.rentno
+            const usernof = frm.userno
+            const codef = frm.code
+            const rentdatef = frm.rentdate
+            const returndatef = frm.returndate
+            let temp = new Date()
+            
+            const year = temp.getFullYear()
+            const month = (temp.getMonth()+1).toString().padStart(2,0)
+            const date = temp.getDate().toString().padStart(2,0)
+            rentdatef.value = [year,month,date].join('-')
+
+            function rent_click(){
+                if(usernof.value == ""){
+                    alert('회원번호를 입력해주세요')
+                    usernof.focus()
+                }
+                else if(codef.value == ""){
+                    alert('도서코드를 입력해주세요')
+                    codef.focus()
+                } else {
+                let temp_ = new Date()
+                const year_ = temp_.getFullYear()
+                const month_ = (temp_.getMonth()+1).toString().padStart(2,0)
+                const date_ = temp.setDate(temp_.getDate()+14).toString().padStart(2,0)
+                returndatef.value = [year_,month_,date_].join('-')
+                let rentdate_=[year_,month_,date_].join('-')
+                alert(rentdate_)
+                }
+                
+
+            }
+            
+
+
+        </script>
     </body>
 </html>
