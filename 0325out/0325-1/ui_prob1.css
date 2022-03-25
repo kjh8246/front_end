@@ -1,0 +1,19 @@
+/* 작성자 : 김재현 */
+.text-center{
+    text-align: center;
+}
+td,th{
+    border: solid 1px gray;
+}
+th{
+    background-color: coral;
+}
+table{
+    width: 60%;
+    margin: auto;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+.right{
+    text-align: right;
+}
